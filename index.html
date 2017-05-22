@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="bower_components/zepto/zepto.min.js"></script>
+    <!--<script type="text/javascript" src="bower_components/jquery2/jquery.min.js"></script>-->
+    <title>我的零花钱</title>
+</head>
+
+<body>
+<!--BGM板块-->
+<audio id="BGM" controls="controls" height="0" width="0" autoplay style="display: none" loop>
+    <source src="audio/app3.mp3"></source>
+</audio>
+<div class="Container">
+    <div class="musicbtn"></div>
+    <div class="beginPage page">
+        <div class="title beginTitleAnimate">
+            <img src="images/nobeatme_07.png" alt=""/>
+        </div>
+        <div class="content">
+            <img src="images/nobeatme2_07.png" alt=""/>
+        </div>
+        <div class="btn">
+            <img src="images/nobeatmeBtn_07.png" alt=""/>
+        </div>
+    </div>
+    <!--<div class="page receivesuccess">-->
+    <!--<div class="shareCon">-->
+    <!--<img src="images/wxShare.png" alt="">-->
+    <!--</div>-->
+
+
+    <!--<div class="title end_shake"><img src="images/receivesuccess_07.png" alt=""></div>-->
+    <!--<div class="receivemain"><img src="images/receivemain_18.png" alt=""></div>-->
+    <!--<div class="btn btn1"><img src="images/receivebtn1_26.png" alt=""></div>-->
+    <!--<div class="btn btn2"><img src="images/receivebtn2_32.png" alt=""></div>-->
+    <!--</div>-->
+    <!--<div class="page forminput">-->
+    <!--<div class="formcontent">-->
+    <!--<div class="title">-->
+    <!--<p>-->
+    <!--输入验证信息 <br>-->
+    <!--提交领取全新宝骏置换补贴-->
+    <!--</p>-->
+
+    <!--</div>-->
+    <!--<div class="form">-->
+    <!--<ul>-->
+    <!--<li>-->
+    <!--<div class="left msg">姓名</div>-->
+    <!--<div class="right input"><input type="text" value="" id="username"></div>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<div class="left msg">电话</div>-->
+    <!--<div class="right input"><input type="tel" value="" id="telphone"></div>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--<div class="formBtn">-->
+    <!--<img src="images/formsubmit_45.png" alt="">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    
+    
+    
+    
+    
+    
+    <div class="page gameEnd">
+        <div class="endmoney">
+            <img src="images/end_money_03.png" alt="">
+        </div>
+        <div class="endtitle end_shake">
+            <img src="images/end_title_03.png" alt="">
+        </div>
+        <div class="endredpack">
+            <img src="images/end_redpack_06.png" alt="">
+            <span class="endmouse mousehand_shake"></span>
+        </div>
+        <div class="endman">
+            <img src="images/end_man_10.png" alt="">
+        </div>
+    </div>
+    <div id="question1End" class="page questionEnd" style="display: none">
+        <div class="layer">
+            <div class="answerLayer answerLayer1"><img src="images/answer1layer_03.png"></div>
+        </div>
+        <div class="layer">
+            <div class="answerLayer answerLayer2"><img src="images/answerlayer2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/answermiddle_03.png" alt="">
+        </div>
+        <div class="applysuccess">
+            <img src="images/applysuccess_07.png" type="forwards">
+        </div>
+    </div>
+    <div class="page questionRetry questionError1" style="display: none;">
+        <div class="layer slideInfirst">
+            <div class="answerLayer answerLayer1"><img src="images/salarycard1_03.png"></div>
+        </div>
+        <div class="layer slideInsecond">
+            <div class="answerLayer answerLayer2"><img src="images/salarycard2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/answermiddle_03.png" alt="">
+        </div>
+        <div class="applyerror another errorBtn">
+            <img src="images/error_another_03.png" alt="" type="back">
+        </div>
+        <div class="applyerror giveup errorBtn">
+            <img src="images/error_giveup_03.png" alt="" type="forwards">
+        </div>
+    </div>
+    <div class="page questionRetry questionError1Else" style="display: none;">
+        <div class="layer slideInfirst">
+            <div class="answerLayer answerLayer1"><img src="images/outeat_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/outeatmiddle_03.png" alt="">
+        </div>
+        <div class="applyerror another errorBtn">
+            <img src="images/error_another_03.png" alt="" type="back">
+        </div>
+        <div class="applyerror giveup errorBtn">
+            <img src="images/error_giveup_03.png" alt="" type="forwards">
+        </div>
+    </div>
+    <div id="question2End" class="page questionEnd" style="display: none;">
+        <div class="layer">
+            <div class="answerLayer answerLayer1"><img src="images/drink_03.png"></div>
+        </div>
+        <div class="layer">
+            <div class="answerLayer answerLayer2"><img src="images/drink2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/answermiddle_03.png" alt="">
+        </div>
+        <div class="applysuccess">
+            <img src="images/applysuccess_07.png" type="forwards">
+        </div>
+    </div>
+    <div class="page questionRetry questionError2" style="display: none;">
+        <div class="layer slideInfirst">
+            <div class="answerLayer answerLayer1"><img src="images/bigspa1_03.png"></div>
+        </div>
+        <div class="layer slideInsecond">
+            <div class="answerLayer answerLayer2"><img src="images/bigspa2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/bigspamiddle_09.png" alt="">
+        </div>
+        <div class="applyerror another errorBtn">
+            <img src="images/error_another_03.png" alt="" type="back">
+        </div>
+        <div class="applyerror giveup errorBtn">
+            <img src="images/error_giveup_03.png" alt="" type="forwards">
+        </div>
+    </div>
+    <div class="page questionRetry questionError2Else" style="display: none">
+        <div class="layer slideInfirst">
+            <div class="answerLayer answerLayer1"><img src="images/nospeak_03.png"></div>
+        </div>
+        <div class="layer slideInsecond">
+            <div class="answerLayer answerLayer2"><img src="images/nospeak2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/nospeakmiddle_09.png" alt="">
+        </div>
+        <div class="applyerror another errorBtn">
+            <img src="images/error_another_03.png" alt="" type="back">
+        </div>
+        <div class="applyerror giveup errorBtn">
+            <img src="images/error_giveup_03.png" alt="" type="forwards">
+        </div>
+    </div>
+    <div id="question3End" class="page questionEnd" style="display: none">
+        <div class="layer">
+            <div class="answerLayer answerLayer1"><img src="images/gameplay_03.png"></div>
+        </div>
+        <div class="layer">
+            <div class="answerLayer answerLayer2"><img src="images/gameplay2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/answermiddle_03.png" alt="">
+        </div>
+        <div class="applysuccess">
+            <img src="images/applysuccess_07.png" type="forwards">
+        </div>
+    </div>
+    <div class="page questionRetry questionError3" style="display: none;">
+        <div class="layer slideInfirst">
+            <div class="answerLayer answerLayer1"><img src="images/dance_03.png"></div>
+        </div>
+        <div class="layer slideInsecond">
+            <div class="answerLayer answerLayer2"><img src="images/dance2_06.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/dancemiddle_09.png" alt="">
+        </div>
+        <div class="applyerror another errorBtn">
+            <img src="images/error_another_03.png" alt="" type="back">
+        </div>
+        <div class="applyerror giveup errorBtn">
+            <img src="images/error_giveup_03.png" alt="" type="forwards">
+        </div>
+    </div>
+    <div class="page questionRetry questionError3Else" style="display: none;">
+        <div class="layer slideInfirst">
+            <div class="answerLayer answerLayer1"><img src="images/sleepenougn_03.png"></div>
+        </div>
+        <div class="layer slideInsecond">
+            <div class="answerLayer answerLayer2"><img src="images/sleepenough2_06.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/sleepenoughmiddle_13.png" alt="">
+        </div>
+        <div class="applyerror another errorBtn">
+            <img src="images/error_another_03.png" alt="" type="back">
+        </div>
+        <div class="applyerror giveup errorBtn">
+            <img src="images/error_giveup_03.png" alt="" type="forwards">
+        </div>
+    </div>
+
+    <div id="question4End" class="page questionEnd" style="display: none">
+        <div class="layer">
+            <div class="answerLayer answerLayer1"><img src="images/singparty_03.png"></div>
+        </div>
+        <div class="layer">
+            <div class="answerLayer answerLayer2"><img src="images/singparty2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/answermiddle_03.png" alt="">
+        </div>
+        <div class="applysuccess">
+            <img src="images/applysuccess_07.png" direct="forwards">
+        </div>
+    </div>
+
+    <div class="page questionRetry questionError4" style="display: none;">
+        <div class="layer slideInfirst">
+            <div class="answerLayer answerLayer1"><img src="images/nowifi_03.png"></div>
+        </div>
+        <div class="layer slideInsecond">
+            <div class="answerLayer answerLayer2"><img src="images/nowifi2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/nowifimiddle_03.png" alt="">
+        </div>
+        <div class="applyerror finalBtn errorBtn">
+            <img src="images/finalanswer_07.png" alt="" direct="forwards">
+        </div>
+    </div>
+
+    <div class="page questionRetry questionError4Else" style="display: none;">
+        <div class="layer slideInfirst">
+            <div class="answerLayer answerLayer1"><img src="images/oncemore_03.png"></div>
+        </div>
+        <div class="layer slideInsecond">
+            <div class="answerLayer answerLayer2"><img src="images/oncemore2_03.png"></div>
+        </div>
+        <div class="answermiddle">
+            <img src="images/oncemoremiddle_03.png" alt="">
+        </div>
+        <div class="applyerror finalBtn errorBtn">
+            <img src="images/finalanswer_07.png" alt="" direct="forwards">
+        </div>
+    </div>
+
+    <!--questionTemplate  四个问题共用-->
+    <div id="questionTemplate" class="page" default="1">
+        <div class="problemDesc">
+            <img class="question question1" src="images/question1_06.png" alt=""/>
+            <img class="question question2" src="images/question2_10.png" alt=""/>
+            <img class="question question3" src="images/question3_09.png" alt=""/>
+            <img class="question question4" src="images/question4_14.png" alt=""/>
+            <div class="descCon">
+                <div class="desc"></div>
+            </div>
+            <div class="answers">
+                <ul>
+                    <li index="A">
+                        <img src="images/bigA_07.png">
+                        <div class="answer">
+                            <p></p>
+                        </div>
+                    </li>
+                    <li index="B"><img src="images/bigB_07.png">
+                        <div class="answer">
+                            <p></p>
+                        </div>
+                    </li>
+                    <li index="C"><img src="images/bigC_choosed.png">
+                        <div class="answer">
+                            <p></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="answer_confirm">
+                <img src="images/answer_confirm_03.png">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var windowHeight = $(window).height();
+    $(".Container").css("height", windowHeight);
+    $(".page").css("height", windowHeight);
+
+    function size() {
+        var _screenWidth = document.documentElement.clientWidth < 300 ? 300 : document.documentElement.clientWidth,
+                _UIWidth = 640,
+                _fontSize = _screenWidth / _UIWidth * 100;
+        document.documentElement.style.fontSize = _fontSize + 'px';
+    }
+    size();
+    window.onresize = function () {
+        size();
+    }
+</script>
+<script type="text/javascript" src="question.js"></script>
+<script type="text/javascript" src="js/renderquestion.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

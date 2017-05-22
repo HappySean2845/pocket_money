@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "authors": [
+    "darre"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery2": "^2.0.0",
+    "zepto": "^1.2.0"
+  }
+}
