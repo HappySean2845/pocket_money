@@ -46,17 +46,18 @@ $(function () {
     }
     pauseflag = !pauseflag;
   })
-  var timeCount = 11;
+  //狂点页面逻辑
+  var timeCount = 10;
   var clickChance = 0
   function caltime(){
     window.calTimeCount = setInterval(function () {
       if(timeCount>=1){
         timeCount--;
-        var str = String(timeCount)+'S'
+        var str = timeCount+'S'
         $(".gaming .time").html(str);
       }else if(timeCount==0){
         clearInterval(window.calTimeCount)
-        alert("时间到,您总共的点击次数是"+clickChance);
+        // alert("时间到,您总共的点击次数是"+clickChance);
         var goStr = '';
         if(clickChance<30){
           goStr = "#toreveive1"
@@ -69,12 +70,10 @@ $(function () {
         }else if(clickChance>=61){
           goStr = "#toreveive5"
         }
-        ~function calResize() {
-          clickChance = 0;
-          timeCount = 11;
-        }();
+        clickChance = 0;
+        timeCount = 10;
         $(".gaming").hide();
-        $("#toreveive5").show();
+        $(goStr).show();
       }
     },1000)
   }
@@ -85,6 +84,7 @@ $(function () {
       $(".forminput").addClass("problemup");
     },200)
   })
+  //狂点按钮
   $(".gaming .clickbtn").on("touchstart",function () {
     if(timeCount>=1){
       clickChance ++;
@@ -141,14 +141,13 @@ $(function () {
       }
     },200)
   });
+  //跳转狂点页面
   $(".crazyclickBegin .clickbtn").on("click",function(){
     var _this = $(this);
-    setTimeout(function(){
-      $(".crazyclickBegin").hide();
-      $(".gaming").show();
-      caltime();
-    },200)
-
+    $(".crazyclickBegin").hide();
+    $(".gaming").show();
+    $(".gaming .time").html('10S');
+    caltime();
   })
 
 
