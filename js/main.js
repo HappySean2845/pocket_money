@@ -7,7 +7,30 @@ $(function () {
     showQuestion.render(1);  //页面初始化时渲染第一则问题
     showQuestion.current = 1;
   }
-  var pauseflag = false;    //暂停开关
+  window.loadingindex =  0;
+  ~function loading(){
+    window.loading = setInterval(function(){
+      loadingindex++;
+      if(loadingindex%4===3){
+        $(".loadingindex2,.loadingindex3,.loadingindex1").show();
+      }else if(loadingindex%4===2){
+        $(".loadingindex2,.loadingindex3,.loadingindex1").show();
+        $(".loadingindex3").hide();
+      }else if(loadingindex%4===1){
+        $(".loadingindex2,.loadingindex3,.loadingindex1").hide();
+        $(".loadingindex1").show();
+      }else if(loadingindex%4===0){
+        $(".loadingindex2,.loadingindex3,.loadingindex1").hide();
+      }
+    },300)
+    setTimeout(function(){
+      window.loadingindex =  0;
+      clearInterval(window.loading);
+      $(".loading").hide();
+      $(".beginPage").show(500);
+    },1000)
+  }()
+  var pauseflag = false;    //暂停开关'
   $(".musicbtn").on("click", function () {
     var bgm = document.getElementById("BGM");
     if (!pauseflag) {
@@ -24,7 +47,7 @@ $(function () {
     setTimeout(function () {
       _this.parent(".beginPage").hide();
       showQuestion.show();   //开始问题已
-    }, 400)
+    }, 200)
 
   })
   $("#questionTemplate .answers ul li").on("click",function(){
@@ -40,14 +63,12 @@ $(function () {
       $("#questionTemplate").removeClass("problemup");
       $(direct).show();
       console.log(direct)
-    },400)
+    },200)
   })
   $(".questionRetry .applyerror,.questionEnd .applysuccess").on("click",function () {
     var _this = $(this);
     var type = $(this).find('img').attr('type');
-
-
-
+    var direct = $(this).find("img").attr("direct");
     setTimeout(function(){
       if(showQuestion.current<=3){
         _this.parent('.page').hide();
@@ -62,10 +83,39 @@ $(function () {
       }else if(showQuestion.current==4){
         //跳转到填信息界面
         _this.parent('.page').hide();
-        var domStr = ".gameEnd";
-        $(domStr).addClass('rightslide')
-
+        $(direct).addClass('rightslide')
       }
     },200)
   });
+  $(".gameEnd .endredpack").on("click",function(){
+    var _this = $(this);
+    setTimeout(function(){
+      _this.parent(".page").hide();
+      $(".forminput").addClass("problemup");
+    },200)
+  });
+  $('.forminput .formBtn').on("click",function () {
+    var _this = $(this);
+    setTimeout(function () {
+      $(".forminput").hide();
+      $(".receivesuccess").show();
+
+    },200)
+  })
+  $(".receivesuccess .btn1").on("click",function () {
+    $(".receivesuccess").find('.shareCon').show(500);
+  })
+  $(".receivesuccess .btn2").on("click",function () {
+    init();
+  })
+  $(".receivesuccess .shareCon").on("click",function (e) {
+    $(this).hide();
+    e = e|| event;
+    e.stopPropagation();
+  })
+  function init(){
+    showQuestion.current = 1;
+    showQuestion.render(1);
+  }
+
 })

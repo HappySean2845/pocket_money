@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="bower_components/zepto/zepto.min.js"></script>
+
     <!--<script type="text/javascript" src="bower_components/jquery2/jquery.min.js"></script>-->
     <title>我的零花钱</title>
 </head>
@@ -27,11 +28,21 @@
 <body>
 <!--BGM板块-->
 <audio id="BGM" controls="controls" height="0" width="0" autoplay style="display: none" loop>
-    <source src="audio/app3.mp3"></source>
+    <source src="audio/app4.mp3"></source>
 </audio>
 <div class="Container">
     <div class="musicbtn"></div>
-    <div class="beginPage page">
+
+    <!--loading-->
+    <div class="loading page">
+        <div class="loadingBG">
+            <img src="images/loadingpig_06.png" alt="">
+            <span style="display: none"  class="loadingSmall loadingindex1"><img src="images/loadingsmall_06.png" alt=""></span>
+            <span style="display: none"  class="loadingSmall loadingindex2"><img src="images/loadingsmall_06.png" alt=""></span>
+            <span style="display: none;" class="loadingSmall loadingindex3"><img src="images/loadingsmall_06.png" alt=""></span>
+        </div>
+    </div>
+    <div class="beginPage page" style="display: none">
         <div class="title beginTitleAnimate">
             <img src="images/nobeatme_07.png" alt=""/>
         </div>
@@ -42,51 +53,57 @@
             <img src="images/nobeatmeBtn_07.png" alt=""/>
         </div>
     </div>
-    <!--<div class="page receivesuccess">-->
-    <!--<div class="shareCon">-->
-    <!--<img src="images/wxShare.png" alt="">-->
-    <!--</div>-->
+    <div class="page receivesuccess" style="display: none">
+        <div class="shareCon" style="display: none">
+            <img src="images/wxShare.png" alt="">
+        </div>
+        <div class="title end_shake"><img src="images/receivesuccess_07.png" alt=""></div>
+        <div class="receivemain"><img src="images/receivemain_18.png" alt=""></div>
+        <div class="btn btn1"><img src="images/receivebtn1_26.png" alt=""></div>
+        <div class="btn btn2"><img src="images/receivebtn2_32.png" alt=""></div>
+    </div>
 
+    <div class="page forminput">
+        <div class="formcontent">
+            <div class="title">
+                <p>
+                    输入验证信息 <br>
+                    提交领取全新宝骏置换补贴
+                </p>
 
-    <!--<div class="title end_shake"><img src="images/receivesuccess_07.png" alt=""></div>-->
-    <!--<div class="receivemain"><img src="images/receivemain_18.png" alt=""></div>-->
-    <!--<div class="btn btn1"><img src="images/receivebtn1_26.png" alt=""></div>-->
-    <!--<div class="btn btn2"><img src="images/receivebtn2_32.png" alt=""></div>-->
-    <!--</div>-->
-    <!--<div class="page forminput">-->
-    <!--<div class="formcontent">-->
-    <!--<div class="title">-->
-    <!--<p>-->
-    <!--输入验证信息 <br>-->
-    <!--提交领取全新宝骏置换补贴-->
-    <!--</p>-->
+            </div>
+            <div class="form">
+                <ul>
+                    <li>
+                        <div class="left msg">姓名</div>
+                        <div class="right input"><input type="text" value="" id="username"></div>
+                    </li>
+                    <li>
+                        <div class="left msg">电话</div>
+                        <div class="right input"><input type="tel" value="" id="telphone"></div>
+                    </li>
+                </ul>
+                <div class="formBtn">
+                    <img src="images/formsubmit_45.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!--</div>-->
-    <!--<div class="form">-->
-    <!--<ul>-->
-    <!--<li>-->
-    <!--<div class="left msg">姓名</div>-->
-    <!--<div class="right input"><input type="text" value="" id="username"></div>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--<div class="left msg">电话</div>-->
-    <!--<div class="right input"><input type="tel" value="" id="telphone"></div>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--<div class="formBtn">-->
-    <!--<img src="images/formsubmit_45.png" alt="">-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
+    <div class="page gameEnd worseEnd">
+        <div class="endtitle end_shake">
+            <img src="images/worseendup_03.png" alt="">
+        </div>
+        <div class="endredpack">
+            <img src="images/worseendmiddle_06.png" alt="">
+            <span class="endmouse mousehand_shake"></span>
+        </div>
+        <div class="endman">
+            <img src="images/worseenddown_10.png" alt="">
+        </div>
+    </div>
 
-    
-    
-    
-    
-    
-    
-    <div class="page gameEnd">
+    <div class="page gameEnd betterEnd">
         <div class="endmoney">
             <img src="images/end_money_03.png" alt="">
         </div>
@@ -109,6 +126,7 @@
             <div class="answerLayer answerLayer2"><img src="images/answerlayer2_03.png"></div>
         </div>
         <div class="answermiddle">
+            <span class="answermoney middleshake"> <img src="images/answermoney_14.png" alt=""></span>
             <img src="images/answermiddle_03.png" alt="">
         </div>
         <div class="applysuccess">
@@ -123,7 +141,7 @@
             <div class="answerLayer answerLayer2"><img src="images/salarycard2_03.png"></div>
         </div>
         <div class="answermiddle">
-            <img src="images/answermiddle_03.png" alt="">
+            <img src="images/salarycardmiddle_03.png" alt="">
         </div>
         <div class="applyerror another errorBtn">
             <img src="images/error_another_03.png" alt="" type="back">
@@ -154,6 +172,7 @@
             <div class="answerLayer answerLayer2"><img src="images/drink2_03.png"></div>
         </div>
         <div class="answermiddle">
+            <span class="answermoney middleshake"> <img src="images/answermoney_14.png" alt=""></span>
             <img src="images/answermiddle_03.png" alt="">
         </div>
         <div class="applysuccess">
@@ -185,6 +204,7 @@
             <div class="answerLayer answerLayer2"><img src="images/nospeak2_03.png"></div>
         </div>
         <div class="answermiddle">
+            <div class="nospeakmouth middleshake"><img src="images/nospeakmouth_12.png" alt=""></div>
             <img src="images/nospeakmiddle_09.png" alt="">
         </div>
         <div class="applyerror another errorBtn">
@@ -202,6 +222,7 @@
             <div class="answerLayer answerLayer2"><img src="images/gameplay2_03.png"></div>
         </div>
         <div class="answermiddle">
+            <span class="answermoney middleshake"> <img src="images/answermoney_14.png" alt=""></span>
             <img src="images/answermiddle_03.png" alt="">
         </div>
         <div class="applysuccess">
@@ -251,10 +272,11 @@
             <div class="answerLayer answerLayer2"><img src="images/singparty2_03.png"></div>
         </div>
         <div class="answermiddle">
+            <span class="answermoney middleshake"> <img src="images/answermoney_14.png" alt=""></span>
             <img src="images/answermiddle_03.png" alt="">
         </div>
         <div class="applysuccess">
-            <img src="images/applysuccess_07.png" direct="forwards">
+            <img src="images/applysuccess_07.png" direct=".worseEnd">
         </div>
     </div>
 
@@ -269,7 +291,7 @@
             <img src="images/nowifimiddle_03.png" alt="">
         </div>
         <div class="applyerror finalBtn errorBtn">
-            <img src="images/finalanswer_07.png" alt="" direct="forwards">
+            <img src="images/finalanswer_07.png" alt="" direct=".betterEnd">
         </div>
     </div>
 
@@ -284,7 +306,7 @@
             <img src="images/oncemoremiddle_03.png" alt="">
         </div>
         <div class="applyerror finalBtn errorBtn">
-            <img src="images/finalanswer_07.png" alt="" direct="forwards">
+            <img src="images/finalanswer_07.png" alt="" direct=".betterEnd">
         </div>
     </div>
 
