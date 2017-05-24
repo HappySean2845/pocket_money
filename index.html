@@ -19,10 +19,16 @@
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="bower_components/zepto/zepto.min.js"></script>
-
-    <!--<script type="text/javascript" src="bower_components/jquery2/jquery.min.js"></script>-->
-    <title>我的零花钱</title>
+    <!--<script type="text/javascript" src="bower_components/zepto/zepto.min.js"></script>-->
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="bower_components/jquery2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
+    <script type="text/javascript" src="js/province.js"></script>
+    <script type="text/javascript" src="js/city.js"></script>
+    <script type="text/javascript" src="js/730dealer.js"></script>
+    <script type="tetx/javascript" src="js/sgmw.js"></script>
+    <script type="tetx/javascript" src="js/share.js"></script>
+    <title>老婆大人别怼我</title>
 </head>
 
 <body>
@@ -42,7 +48,7 @@
             <span style="display: none;" class="loadingSmall loadingindex3"><img src="images/loadingsmall_06.png" alt=""></span>
         </div>
     </div>
-    <div class="beginPage page" style="display: none">
+    <div class="beginPage page">
         <div class="title beginTitleAnimate">
             <img src="images/nobeatme_07.png" alt=""/>
         </div>
@@ -63,6 +69,52 @@
         <div class="btn btn2"><img src="images/receivebtn2_32.png" alt=""></div>
     </div>
 
+    <div id="toreveive1" class="page toreveive" style="display: none;">
+        <div class="title end_shake"><img src="images/longangry_03.png"></div>
+        <div class="receivecontent"><img src="images/receiveresult1_02.png" alt=""></div>
+        <div class='receivebtn btn'><img src="images/receivebtn_03.png"></div>
+    </div>
+
+    <div id="toreveive2" class="page toreveive" style="display: none">
+        <div class="title end_shake"><img src="images/longangry_03.png"></div>
+        <div class="receivecontent"><img src="images/receiveresult2_02.png" alt=""></div>
+        <div class='receivebtn btn'><img src="images/receivebtn_03.png"></div>
+    </div>
+
+    <div id="toreveive3" class="page toreveive" style="display: none">
+        <div class="title end_shake"><img src="images/longangry_03.png"></div>
+        <div class="receivecontent"><img src="images/receiveresult3_02.png" alt=""></div>
+        <div class='receivebtn btn'><img src="images/receivebtn_03.png"></div>
+    </div>
+
+    <div id="toreveive4" class="page toreveive" style="display: none">
+        <div class="title end_shake"><img src="images/longangry_03.png"></div>
+        <div class="receivecontent"><img src="images/receiveresult4_02.png" alt=""></div>
+        <div class='receivebtn btn'><img src="images/receivebtn_03.png"></div>
+    </div>
+
+    <div id="toreveive5" class="page toreveive" style="display: none">
+        <div class="title end_shake"><img src="images/longangry_03.png"></div>
+        <div class="receivecontent"><img src="images/receiveresult5_02.png" alt=""></div>
+        <div class='receivebtn btn'><img src="images/receivebtn_03.png"></div>
+    </div>
+    <div class="page crazyclick crazyclickBegin" style="display: none">
+        <div class="clicktitle"><img src="images/crazyclick_07.png"></div>
+        <div class="clickbtn">
+            <span class="endmouse mousehand_shake"></span>
+            <img src="images/crazybtn_17.png">
+        </div>
+    </div>
+    <div class="page crazyclick gaming" style="display: none">
+        <div class="crazyboard">
+            <div class="dataview time">1</div>
+            <div class="dataview chance">0</div>
+        </div>
+        <div class="clickbtn">
+            <img src="images/crazybtn_17.png">
+        </div>
+    </div>
+
     <div class="page forminput">
         <div class="formcontent">
             <div class="title">
@@ -76,17 +128,29 @@
                 <ul>
                     <li>
                         <div class="left msg">姓名</div>
-                        <div class="right input"><input type="text" value="" id="username"></div>
+                        <div class="right input"><input type="text" value="" id="name"></div>
                     </li>
                     <li>
                         <div class="left msg">电话</div>
-                        <div class="right input"><input type="tel" value="" id="telphone"></div>
+                        <div class="right input"><input type="tel" value="" id="tel"></div>
+                    </li>
+                    <li>
+                        <div class="left msg">省</div>
+                        <div class="right input"><select name="pro" id="pro"></select></div>
+                    </li>
+                    <li>
+                        <div class="left msg">市</div>
+                        <div class="right input"><select name="city" id="city"></select></div>
+                    </li>
+                    <li>
+                        <div class="left msg">经销商</div>
+                        <div class="right input"><select name="delear" id="delear"></select></div>
                     </li>
                 </ul>
-                <div class="formBtn">
-                    <img src="images/formsubmit_45.png" alt="">
-                </div>
             </div>
+        </div>
+        <div class="formBtn">
+            <img src="images/formsubmit_45.png" alt="">
         </div>
     </div>
 

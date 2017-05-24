@@ -2,6 +2,10 @@
  * Created by Darre on 17/5/22.
  */
 $(function () {
+  try {
+    document.getElementById("BGM").play();
+  }catch(err){}
+  document.getElementById("BGM");
   if (!window.showQuestion) {
     showQuestion = new renderQuestion();
     showQuestion.render(1);  //页面初始化时渲染第一则问题
@@ -41,6 +45,55 @@ $(function () {
       $(this).removeClass("close");
     }
     pauseflag = !pauseflag;
+  })
+  var timeCount = 11;
+  var clickChance = 0
+  function caltime(){
+    window.calTimeCount = setInterval(function () {
+      if(timeCount>=1){
+        timeCount--;
+        var str = String(timeCount)+'S'
+        $(".gaming .time").html(str);
+      }else if(timeCount==0){
+        clearInterval(window.calTimeCount)
+        alert("时间到,您总共的点击次数是"+clickChance);
+        var goStr = '';
+        if(clickChance<30){
+          goStr = "#toreveive1"
+        }else if(clickChance>=31&&clickChance<40){
+          goStr = "#toreveive2"
+        }else if(clickChance>=41&&clickChance<50){
+          goStr = "#toreveive3"
+        }else if(clickChance>=51&&clickChance<60){
+          goStr = "#toreveive4"
+        }else if(clickChance>=61){
+          goStr = "#toreveive5"
+        }
+        ~function calResize() {
+          clickChance = 0;
+          timeCount = 11;
+        }();
+        $(".gaming").hide();
+        $("#toreveive5").show();
+      }
+    },1000)
+  }
+  $(".toreveive .receivebtn").on("click",function () {
+    var _this = $(this);
+    setTimeout(function () {
+      _this.parent(".toreveive").hide();
+      $(".forminput").addClass("problemup");
+    },200)
+  })
+  $(".gaming .clickbtn").on("touchstart",function () {
+    if(timeCount>=1){
+      clickChance ++;
+      $(".gaming .chance").html(clickChance)
+    }else if(timeCount==0){
+
+    }
+
+
   })
   $(".beginPage .btn").on("click", function () {
     var _this = $(this)
@@ -83,10 +136,22 @@ $(function () {
       }else if(showQuestion.current==4){
         //跳转到填信息界面
         _this.parent('.page').hide();
-        $(direct).addClass('rightslide')
+        $(".crazyclickBegin").show();
+        // $(direct).addClass('rightslide')
       }
     },200)
   });
+  $(".crazyclickBegin .clickbtn").on("click",function(){
+    var _this = $(this);
+    setTimeout(function(){
+      $(".crazyclickBegin").hide();
+      $(".gaming").show();
+      caltime();
+    },200)
+
+  })
+
+
   $(".gameEnd .endredpack").on("click",function(){
     var _this = $(this);
     setTimeout(function(){
@@ -94,18 +159,46 @@ $(function () {
       $(".forminput").addClass("problemup");
     },200)
   });
+  //formbtn表单提交
   $('.forminput .formBtn').on("click",function () {
     var _this = $(this);
     setTimeout(function () {
-      $(".forminput").hide();
-      $(".receivesuccess").show();
-
+      // $(".forminput").hide();
+      // $(".receivesuccess").show();
+      var name = $("#name").val();
+      if (!validate.isEmpty(name)) {
+        alert("请输入姓名");
+        return false;
+      }
+      var tel = $("#tel").val();
+      if (!validate.isMobile(tel)) {
+        alert("请输入正确的手机号码");
+        return false;
+      }
+      var province = $("#pro option:selected").text();
+      if (province == "请选择") {
+        alert("请选择省份");
+        return false;
+      }
+      var city = $("#city option:selected").text();
+      if (city == "请选择") {
+        alert("请选择城市");
+        return false;
+      }
+      var delear = $("#delear option:selected").text();
+      if (delear == "请选择") {
+        alert("请选择经销商");
+        return false;
+      }
+      addInfo(name, tel, $("#pro option:selected").attr("sid"), $("#city option:selected").attr("sid"), $("#delear option:selected").attr("sid"))
     },200)
   })
   $(".receivesuccess .btn1").on("click",function () {
     $(".receivesuccess").find('.shareCon').show(500);
   })
   $(".receivesuccess .btn2").on("click",function () {
+    $(".receivesuccess").hide();
+    $("#questionTemplate").removeClass("problemup");
     init();
   })
   $(".receivesuccess .shareCon").on("click",function (e) {
@@ -117,5 +210,72 @@ $(function () {
     showQuestion.current = 1;
     showQuestion.render(1);
   }
+  //form表单联动
+  function createPro() {
+    $("#pro").empty();
+    $("#pro").append('<option sid="-1">请选择</option>');
+    for (var i = 0; i < provinceData.length; i++) {
+      $("#pro").append('<option sid=' + provinceData[i].proid + '>' + provinceData[i].proname + '</option>');
+    }
+  }
+  createPro();
+  $("#pro").change(function(event) {
+    var _id = $("#pro option:selected").attr("sid");
+
+    $("#city").empty();
+    $("#city").append('<option sid="-1">请选择</option>');
+    for (var i = 0; i < cicyData.length; i++) {
+      if (cicyData[i].proID == _id) {
+        $("#city").append('<option sid=' + cicyData[i].cityID + '>' + cicyData[i].cityName + '</option>');
+      }
+    }
+
+    var _id = $("#city option:selected").attr("sid");
+
+    $("#delear").empty();
+    $("#delear").append('<option sid="-1">请选择</option>');
+    for (var i = 0; i < WuLingdealers.length; i++) {
+      if (WuLingdealers[i].city == _id) {
+        $("#delear").append('<option sid=' + WuLingdealers[i].dealerCode + '>' + WuLingdealers[i].company + '</option>');
+      }
+    }
+  });
+
+  $("#city").change(function(event) {
+    var _id = $("#city option:selected").attr("sid");
+
+    $("#delear").empty();
+    for (var i = 0; i < WuLingdealers.length; i++) {
+      if (WuLingdealers[i].city == _id) {
+        $("#delear").append('<option sid=' + WuLingdealers[i].dealerCode + '>' + WuLingdealers[i].company + '</option>');
+      }
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 })
