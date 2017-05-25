@@ -61,13 +61,13 @@ $(function () {
         var goStr = '';
         if(clickChance<30){
           goStr = "#toreveive1"
-        }else if(clickChance>=31&&clickChance<40){
+        }else if(clickChance>=41&&clickChance<=50){
           goStr = "#toreveive2"
-        }else if(clickChance>=41&&clickChance<50){
+        }else if(clickChance>=51&&clickChance<=60){
           goStr = "#toreveive3"
-        }else if(clickChance>=51&&clickChance<60){
+        }else if(clickChance>=61&&clickChance<=70){
           goStr = "#toreveive4"
-        }else if(clickChance>=61){
+        }else if(clickChance>=71){
           goStr = "#toreveive5"
         }
         clickChance = 0;
