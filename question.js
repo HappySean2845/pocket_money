@@ -1,7 +1,7 @@
 window.question = [
   {
     index:1,
-    title:"同事聚餐,申请一笔用餐资金",
+    title:"同事聚餐,申请一笔用餐资金     ",
     answerA:{
       msg:'怂人壮胆型：工资卡给我，有用！你别管那么多！',
       direct:'.questionError1',
