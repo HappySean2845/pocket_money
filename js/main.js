@@ -32,7 +32,7 @@ $(function () {
       clearInterval(window.loading);
       $(".loading").hide();
       $(".beginPage").show(500);
-    },1000)
+    },1500)
   }()
   var pauseflag = false;    //暂停开关'
   $(".musicbtn").on("click", function () {
