@@ -601,9 +601,13 @@ body .Container {
     width: 4.02rem;
     height: 3.82rem;
     margin: 0 auto;
-    margin-top: 3.78rem;
+    margin-top: 3.28rem;
     position: relative;
 }
+.questionRetry .answermiddle.nosalarycardBg {
+    margin-top: 3.78rem;
+}
+
 .questionRetry .answermiddle .mywifi{
     width: 2.76rem;
     height: 4.3rem;

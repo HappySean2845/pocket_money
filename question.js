@@ -61,17 +61,17 @@ window.question = [
     title:"听演唱会,申请一笔娱乐资金",
     answerC:{
       msg:'热血恳求型：周天王的演唱会啊！一生一次，买不了吃亏，买不了上当！',
-      direct:null,
+      direct:'.questionError4Else',
       desc:false,
     },
     answerB:{
       msg:'瞎凑热闹型：最近几个朋友都买了票，我也想去看看，嘿嘿嘿~',
-      direct:null,
+      direct:'.questionError4',
       desc:false,
     },
     answerA:{
       msg:'借花献佛型：记得你爱听他的歌,这次给我个机会带你去听。',
-      direct:null,
+      direct:'#question4End',
       desc:true,
     }
   },
