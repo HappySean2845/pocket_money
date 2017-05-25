@@ -32,9 +32,9 @@ wx.ready(function() {
     addWeiXinEvent(0);
 });
 var addWeiXinEvent = function(index) {
-    $.timelineTitle = "全新宝骏730百万车主感恩季";
-    $.shareAppDesc = "宝骏730销量突破一百万，感恩有你，回馈有礼！";
-    $.shareAppTitle = "全新宝骏730百万车主感恩季";
+    $.timelineTitle = "老婆大人别怼我";
+    $.shareAppDesc = "跟你讲喔，我这是疼老婆不是怕老婆！";
+    $.shareAppTitle = "老婆大人别怼我";
     $.shareUrl = window.location.href
     $.shareImage = "/images/share.jpg";
     wx.onMenuShareAppMessage({

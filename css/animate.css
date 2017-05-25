@@ -484,18 +484,31 @@
     100%{-moz-transform:scale(1) rotate(0)}
 }
 .nosalarycard{
-    -webkit-animation:bounceIn .5s .2s ease-in both;
-    -moz-animation:bounceIn .5s .2s ease-in both;
+    -webkit-animation:bounceIn .3s .2s ease-in both;
+    -moz-animation:bounceIn .3s .2s ease-in both;
 }
 @-webkit-keyframes bounceIn{
-    0%{opacity:0;-webkit-transform:scale(.3)}
+    0%{opacity:0;-webkit-transform:scale(2)}
     100%{opacity:1;-webkit-transform:scale(1)}
 }
 @-moz-keyframes bounceIn{
-    0%{opacity:0;-moz-transform:scale(.3)}
+    0%{opacity:0;-moz-transform:scale(2)}
     100%{opacity:1;-moz-transform:scale(1)}
 }
-
+.shake{
+    -webkit-animation:shake .5s .2s infinite ease both;
+    -moz-animation:shake .5s .2s infinite ease both;
+}
+/*上下摇晃*/
+@keyframes shake{
+    0%,100%{-webkit-transform:translateY(-0.1rem);}
+    50%{-webkit-transform:translateY(0.1rem);}
+}
+/*.answermiddle{
+-webkit-animation:bounceIn .3s .2s infinite;
+-moz-animation:bounceIn .3s .2s infinite;
+}
+*/
 
 
 

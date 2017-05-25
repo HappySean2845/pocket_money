@@ -1,24 +1,6 @@
 ﻿
 var clickFlag = true;
-var validate = {
-    isEmpty: function (val) {
-        if (val == "") {
-            return false;
-        } else {
-            return true;
-        }
-    },
-    isMobile: function (val) {
-        if (val == "") {
-            return false;
-        }
-        if (!val.match(/^1[3|4|5|7|8][0-9]\d{4,8}$/) || val.length != 11) {
-            return false;
-        } else {
-            return true;
-        }
-    },
-}
+
 
 function addInfo(_name, _tel, _province, _city, _dealer) {
     clickFlag = false;
@@ -47,7 +29,9 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
         success: function (result) {
             var wr = result.success[0].result;
             if (wr == 1) {
-                alert('预约成功，可以进行抽奖');
+                alert('提交成功');
+                $('.forminput').fadeOut();
+                $('.receivesuccess').fadeIn(300);
                 // var p = $("#pro option:selected").text();
                 // var c = $("#city option:selected").text();
                 // var d = $("#delear option:selected").text();
