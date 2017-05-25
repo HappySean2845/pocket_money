@@ -3,7 +3,7 @@
  */
 $(function () {
   try {
-    document.getElementById("BGM").pause();
+    document.getElementById("BGM").play();
   }catch(err){}
   if (!window.showQuestion) {
     showQuestion = new renderQuestion();
