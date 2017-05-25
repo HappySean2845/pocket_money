@@ -3,9 +3,8 @@
  */
 $(function () {
   try {
-    document.getElementById("BGM").play();
+    document.getElementById("BGM").pause();
   }catch(err){}
-  document.getElementById("BGM");
   if (!window.showQuestion) {
     showQuestion = new renderQuestion();
     showQuestion.render(1);  //页面初始化时渲染第一则问题

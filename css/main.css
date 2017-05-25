@@ -599,9 +599,17 @@ body .Container {
 
 .questionRetry .answermiddle {
     width: 4.02rem;
-    height: 4.31rem;
+    height: 3.82rem;
     margin: 0 auto;
     margin-top: 3.28rem;
+    position: relative;
+}
+.questionRetry .answermiddle .mywifi{
+    width: 2.76rem;
+    height: 4.3rem;
+    position: absolute;
+    left: 0.82rem;
+    bottom: 0.05rem;
 }
 
 .questionRetry.questionError1Else .answerLayer1 {
