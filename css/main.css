@@ -370,7 +370,7 @@ body .Container {
     background-repeat: no-repeat;
     margin: 0 auto;
     position: relative;
-    margin-top: 0.32rem;
+    margin-top: 1.28rem;
 }
 
 #questionTemplate .problemDesc img.question {
@@ -435,7 +435,7 @@ body .Container {
 }
 
 #questionTemplate .answers ul li:nth-child(2), #questionTemplate .answers ul li:nth-child(3) {
-    margin-top: 0.36rem;
+    margin-top: 0.52rem;
 }
 
 #questionTemplate .answers ul li img {
@@ -566,6 +566,11 @@ body .Container {
 .questionRetry .applyerror {
     width: 3.02rem;
     height: 0.86rem;
+    margin: 0 auto;
+}
+.questionRetry.questionError4 .applyerror {
+    width: 2.94rem;
+    height: 0.89rem;
     margin: 0 auto;
 }
 
@@ -771,6 +776,10 @@ body .Container {
     height: 0.86rem;
     margin: 0 auto;
     margin-top: 0.32rem;
+}
+#question4End .applysuccess {
+    width: 3.02rem;
+    height: 0.99rem;
 }
 
 .questionEnd .applysuccess:active {
