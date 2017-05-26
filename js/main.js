@@ -58,7 +58,7 @@ $(function () {
         clearInterval(window.calTimeCount)
         // alert("时间到,您总共的点击次数是"+clickChance);
         var goStr = '';
-        if(clickChance<30){
+        if(clickChance<=40){
           goStr = "#toreveive1"
         }else if(clickChance>=41&&clickChance<=50){
           goStr = "#toreveive2"
