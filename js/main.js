@@ -196,7 +196,7 @@ $(function () {
   })
   $(".receivesuccess .btn2").on("click",function () {
     $(".receivesuccess").hide();
-    $("#questionTemplate").removeClass("problemup");
+    $("#questionTemplate").addClass("problemup");
     init();
   })
   $(".receivesuccess .shareCon").on("click",function (e) {
