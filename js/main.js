@@ -10,6 +10,7 @@ $(function () {
     showQuestion.render(1);  //页面初始化时渲染第一则问题
     showQuestion.current = 1;
   }
+  window.hasFormSubmit = false;
   window.loadingindex =  0;
   ~function loading(){
     window.loading = setInterval(function(){
@@ -80,7 +81,11 @@ $(function () {
     var _this = $(this);
     setTimeout(function () {
       _this.parent(".toreveive").hide();
-      $(".forminput").addClass("problemup");
+      if(!window.hasFormSubmit){    //用户未提交过表单
+        $(".forminput").addClass("problemup").show();
+      }else{
+        $('.receivesuccess').fadeIn(300);
+      }
     },200)
   })
   //狂点按钮
@@ -296,7 +301,8 @@ $(function () {
             var wr = result.success[0].result;
             if (wr == 1) {
                 alert('提交成功');
-                $('.forminput').fadeOut();
+               window.hasFormSubmit = true;
+              $('.forminput').fadeOut();
                 $('.receivesuccess').fadeIn(300);
                 // var p = $("#pro option:selected").text();
                 // var c = $("#city option:selected").text();
