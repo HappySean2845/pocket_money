@@ -946,6 +946,54 @@ body .Container {
     -moz-transform: scale(1.08);
 }
 
+
+.chancesuccess .chancetimestit{
+    position: absolute;
+    width: 100%;
+    right: -100%;
+    margin-top: 1rem;
+}
+.chancesuccess .chancetimestit .con{
+    width: 3.62rem;
+    margin: 0 auto;
+}
+.chancesuccess .chancetimes{
+    width:100%;
+    position: absolute;
+    right:-100%;
+    margin-top: 2.5rem;
+    overflow: hidden;
+}
+.chancesuccess .chancetimes .con{
+    width: 2.4rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.chancesuccess .chancetimes .con .ten,.chancesuccess .chancetimes .con .int{
+    width: 0.85rem;
+    height: 0.8rem;
+}
+.chancesuccess .chancetimes .con .chances{
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-top: 0.06rem;
+}
+.chancesuccess .chancetimes .con .ten,.chancesuccess .chancetimes .con .int,.chancesuccess .chancetimes .con .chances{
+    float: left;
+}
+.chancesuccess .chancemain{
+    width: 5.62rem;
+    margin: 0 auto;
+    margin-top: 3.7rem;
+}
+
+.chancesuccess .chancered{
+    width: 2.47rem;
+    margin: 0 auto;
+    margin-top: 0.56rem;
+}
+
+
 .receivesuccess .title {
     width: 5.41rem;
     height: 1.35rem;

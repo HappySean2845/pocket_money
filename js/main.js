@@ -58,25 +58,39 @@ $(function () {
       }else if(timeCount==0){
         clearInterval(window.calTimeCount)
         // alert("时间到,您总共的点击次数是"+clickChance);
-        var goStr = '';
+        var clickChanceStr = clickChance.toString();
+        var ten = clickChanceStr.length>=2?clickChanceStr[0]:'0';
+        var int = clickChanceStr.length>=2?clickChanceStr[1]:clickChanceStr[0];
+        //重置倒计时和次数
         if(clickChance<=40){
-          goStr = "#toreveive1"
+          window.goStr = "#toreveive1"
         }else if(clickChance>=41&&clickChance<=50){
-          goStr = "#toreveive2"
+          window.goStr = "#toreveive2"
         }else if(clickChance>=51&&clickChance<=60){
-          goStr = "#toreveive3"
+          window.goStr = "#toreveive3"
         }else if(clickChance>=61&&clickChance<=70){
-          goStr = "#toreveive4"
+          window.goStr = "#toreveive4"
         }else if(clickChance>=71){
-          goStr = "#toreveive5"
+          window.goStr = "#toreveive5"
         }
         clickChance = 0;
         timeCount = 10;
         $(".gaming").hide();
-        $(goStr).show();
+        $(".ten img").hide();
+        $(".int img").hide();
+        $(".ten .num_"+ten).show();
+        $(".int .num_"+int).show();
+        $(".chancesuccess").show();
       }
     },1000)
   }
+  $(".chancesuccess .chancered").on("click",function(){
+    var _this = $(this);
+    setTimeout(function(){
+      _this.parent(".chancesuccess").hide();
+      $(window.goStr).fadeIn(300);
+    },200)
+  })
   $(".toreveive .receivebtn").on("click",function () {
     var _this = $(this);
     setTimeout(function () {
