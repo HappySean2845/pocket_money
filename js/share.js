@@ -1,3 +1,5 @@
+function share(){
+    console.log(222);
 $.ajax({
     url: "http://www.adleading.com/authorize_new/share_sample.php",
     type: "GET",
@@ -71,3 +73,4 @@ var addWeiXinEvent = function(index) {
         }
     });
 };
+}

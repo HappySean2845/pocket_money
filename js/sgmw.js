@@ -19,7 +19,7 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
             dealercode: _dealer,
             cartype: '宝骏730',
             mark: '',
-            source: '全新宝骏730预约试驾',
+            source: '零花钱',
             ordering: 0,
             driving: 1,
             credit: 0
