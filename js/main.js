@@ -390,9 +390,9 @@ $(function () {
         addWeiXinEvent(0);
     });
     var addWeiXinEvent = function(index) {
-        $.timelineTitle = "老婆大人别怼我";
+        $.timelineTitle = "老婆大人别怼我——超强零花钱申请攻略";
         $.shareAppDesc = "跟你讲喔，我这是疼老婆不是怕老婆！";
-        $.shareAppTitle = "老婆大人别怼我";
+        $.shareAppTitle = "老婆大人别怼我——超强零花钱申请攻略";
         $.shareUrl = window.location.href
         $.shareImage = "http://www.sgmw.com.cn/m/20170606/images/share.jpg";
         wx.onMenuShareAppMessage({

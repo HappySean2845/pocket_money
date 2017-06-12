@@ -46,7 +46,7 @@ window.question = [
       desc:false,
     },
     answerB:{
-      msg:'白日做梦型：曾经我是超级英雄，知道失去装备，你愿意帮助我吗？',
+      msg:'白日做梦型：曾经我是超级英雄，直到失去装备，你愿意帮助我吗？',
       direct:'.questionError3Else',
       desc:false,
     },
@@ -70,7 +70,7 @@ window.question = [
       desc:false,
     },
     answerA:{
-      msg:'借花献佛型：记得你爱听他的歌,这次给我个机会带你去听。',
+      msg:'借花献佛型：记得你爱听他的歌，这次给我个机会带你去听。',
       direct:'#question4End',
       desc:true,
     }
