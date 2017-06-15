@@ -32,6 +32,8 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
                 alert('提交成功');
                 $('.forminput').fadeOut();
                 $('.receivesuccess').fadeIn(300);
+                _tel = _tel.substring(0,3)+'****'+_tel.substring(7,11)
+                window.smqObj[method2]['method'](_name, _tel, _province, _city, _dealer);
                 // var p = $("#pro option:selected").text();
                 // var c = $("#city option:selected").text();
                 // var d = $("#delear option:selected").text();

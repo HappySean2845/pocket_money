@@ -87,6 +87,8 @@ $(function () {
     },1000)
   }
   $(".chancesuccess .chancered").on("click",function(){
+    window.smqObj['39b']['method']();
+    window.smqObj['40a']['method']();
     var _this = $(this);
     setTimeout(function(){
       _this.parent(".chancesuccess").hide();
@@ -94,6 +96,7 @@ $(function () {
     },200)
   })
   $(".toreveive .receivebtn").on("click",function () {
+    window.smqObj['40b']['method']();
     var _this = $(this);
     setTimeout(function () {
       _this.parent(".toreveive").hide();
@@ -117,6 +120,7 @@ $(function () {
   })
   $(".beginPage .btn").on("click", function () {
     var _this = $(this)
+    window.smqObj['3']['method']();
     setTimeout(function () {
       _this.parent(".beginPage").hide();
       showQuestion.show();   //开始问题已
@@ -126,19 +130,46 @@ $(function () {
   $("#questionTemplate .answers ul li").on("click",function(){
     $(this).parent('ul').find("li").removeClass("choosed");
     $(this).addClass("choosed");
+    var methodIndex = $(this).find('p').attr("methodindex");
+    window.smqObj[methodIndex]['method']();
   })
 
   $("#questionTemplate .answer_confirm").on("click",function(){
+    var method,method2;
+    if(window.methodIndex==1){
+      method = 7
+    }else if(window.methodIndex==2){
+      method =16
+    }else if(window.methodIndex==3){
+      method =25
+    }else if(window.methodIndex==4){
+      method =34
+    }
+    window.smqObj[method]['method']();
     setTimeout(function(){
       var char = showQuestion.template.find(".choosed").attr("index");
       var question = window.question;
       var direct = question[showQuestion.current-1]['answer'+char].direct;
+      if(direct.indexOf("#")>-1){    //选择了正确的答案
+        if(window.methodIndex==1){
+          method2 = '10a';
+        }else if(window.methodIndex==2){
+          method2 ='17a';
+        }else if(window.methodIndex==3){
+          method2 ='30a';
+        }else if(window.methodIndex==4){
+          method2 ='35a';
+        }
+        window.smqObj['42b']['method']();
+      }
       $("#questionTemplate").removeClass("problemup");
       $(direct).show();
       console.log(direct)
     },200)
   })
   $(".questionRetry .applyerror,.questionEnd .applysuccess").on("click",function () {
+    var methodIndex = $(this).attr("methodindex");
+    window.smqObj[methodIndex]['method']();
     var _this = $(this);
     var type = $(this).find('img').attr('type');
     var direct = $(this).find("img").attr("direct");
@@ -163,6 +194,8 @@ $(function () {
   });
   //跳转狂点页面
   $(".crazyclickBegin .clickbtn").on("click",function(){
+    window.smqObj['38']['method']();
+    window.smqObj['39a']['method']();
     var _this = $(this);
     $(".crazyclickBegin").hide();
     $(".gaming").show();
@@ -181,6 +214,7 @@ $(function () {
   //formbtn表单提交
   $('.forminput .formBtn').on("click",function () {
     var _this = $(this);
+    window.smqObj['42b']['method']();
     setTimeout(function () {
       // $(".forminput").hide();
       // $(".receivesuccess").show();
@@ -213,9 +247,11 @@ $(function () {
     },200)
   })
   $(".receivesuccess .btn1").on("click",function () {
+    window.smqObj['44']['method']();
     $(".receivesuccess").find('.shareCon').fadeIn();
   })
   $(".receivesuccess .btn2").on("click",function () {
+    window.smqObj['45']['method']();
     $(".receivesuccess").hide();
     $("#questionTemplate").addClass("problemup");
     init();

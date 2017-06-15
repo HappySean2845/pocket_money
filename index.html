@@ -22,11 +22,24 @@
     <!--<script type="text/javascript" src="bower_components/zepto/zepto.min.js"></script>-->
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script type="text/javascript" src="bower_components/jquery2/jquery.min.js"></script>
+    <script>!(function (a, b, c, d, e, f) {
+      var g = "", h = a.sessionStorage, i = "__admaster_ta_param__", j = "tmDataLayer" !== d ? "&dl=" + d : "";
+      if (a[f] = {}, a[d] = a[d] || [], a[d].push({startTime: +new Date, event: "tm.js"}), h) {
+        var k = a.location.search,
+          l = new RegExp("[?&]" + i + "=(.*?)(&|#|$)").exec(k) || [];
+        l[1] && h.setItem(i, l[1]), l = h.getItem(i),
+        l && (g = "&p=" + l + "&t=" + +new Date)
+      }
+      var m = b.createElement(c), n = b.getElementsByTagName(c)[0];
+      m.src = "//tag.cdnmaster.cn/tmjs/tm.js?id=" + e + j + g,
+        m.async = !0, n.parentNode.insertBefore(m, n)
+    })(window, document, "script", "tmDataLayer", "TM-735428", "admaster_tm");
+    </script>
+    <script type="text/javascript" src="js/_smq.js"></script>
     <script type="text/javascript" src="js/md5.js"></script>
     <script type="text/javascript" src="js/province.js"></script>
     <script type="text/javascript" src="js/city.js"></script>
     <script type="text/javascript" src="js/730dealer.js"></script>
-
     <title>老婆大人别怼我——超强零花钱申请攻略</title>
 </head>
 
@@ -42,9 +55,10 @@
     <div class="loading page">
         <div class="loadingBG">
             <img src="images/loadingpig_06.png" alt="">
-            <span style="display: none"  class="loadingSmall loadingindex1"><img src="images/loadingsmall_06.png" alt=""></span>
-            <span style="display: none"  class="loadingSmall loadingindex2"><img src="images/loadingsmall_06.png" alt=""></span>
-            <span style="display: none;" class="loadingSmall loadingindex3"><img src="images/loadingsmall_06.png" alt=""></span>
+            <span style="display: none" class="loadingSmall loadingindex1"><img src="images/loadingsmall_06.png" alt=""></span>
+            <span style="display: none" class="loadingSmall loadingindex2"><img src="images/loadingsmall_06.png" alt=""></span>
+            <span style="display: none;" class="loadingSmall loadingindex3"><img src="images/loadingsmall_06.png"
+                                                                                 alt=""></span>
         </div>
     </div>
     <div class="beginPage page">
@@ -231,7 +245,7 @@
             <span class="answermoney middleshake"> <img src="images/answermoney_14.png" alt=""></span>
             <img src="images/answermiddle_03.png" alt="">
         </div>
-        <div class="applysuccess">
+        <div class="applysuccess" methodindex="10b">
             <img src="images/applysuccess_07.png" type="forwards">
         </div>
     </div>
@@ -249,10 +263,10 @@
             </div>
             <img src="images/salarymiddle_17.png" alt="">
         </div>
-        <div class="applyerror another errorBtn">
+        <div class="applyerror another errorBtn" methodindex="8">
             <img src="images/error_another_03.png" alt="" type="back">
         </div>
-        <div class="applyerror giveup errorBtn">
+        <div class="applyerror giveup errorBtn" methodindex="9">
             <img src="images/error_giveup_03.png" alt="" type="forwards">
         </div>
     </div>
@@ -263,13 +277,17 @@
         <div class="answermiddle">
             <img class="shake" src="images/outeatmiddle_03.png" alt="">
         </div>
-        <div class="applyerror another errorBtn">
+        <div class="applyerror another errorBtn" methodindex="11">
             <img src="images/error_another_03.png" alt="" type="back">
         </div>
-        <div class="applyerror giveup errorBtn">
+        <div class="applyerror giveup errorBtn" methodindex="12">
             <img src="images/error_giveup_03.png" alt="" type="forwards">
         </div>
     </div>
+
+
+
+
     <div id="question2End" class="page questionEnd" style="display: none;">
         <div class="layer">
             <div class="answerLayer answerLayer1"><img src="images/drink_03.png"></div>
@@ -281,7 +299,7 @@
             <span class="answermoney middleshake"> <img src="images/answermoney_14.png" alt=""></span>
             <img src="images/answermiddle_03.png" alt="">
         </div>
-        <div class="applysuccess">
+        <div class="applysuccess" methodindex="17b">
             <img src="images/applysuccess_07.png" type="forwards">
         </div>
     </div>
@@ -295,10 +313,10 @@
         <div class="answermiddle">
             <img class="shake" src="images/bigspamiddle_09.png" alt="">
         </div>
-        <div class="applyerror another errorBtn">
+        <div class="applyerror another errorBtn" methodindex="20">
             <img src="images/error_another_03.png" alt="" type="back">
         </div>
-        <div class="applyerror giveup errorBtn">
+        <div class="applyerror giveup errorBtn" methodindex="21">
             <img src="images/error_giveup_03.png" alt="" type="forwards">
         </div>
     </div>
@@ -313,13 +331,17 @@
             <div class="nospeakmouth middleshake"><img src="images/nospeakmouth_12.png" alt=""></div>
             <img src="images/nospeakmiddle_09.png" alt="">
         </div>
-        <div class="applyerror another errorBtn">
+        <div class="applyerror another errorBtn" methodindex="18">
             <img src="images/error_another_03.png" alt="" type="back">
         </div>
-        <div class="applyerror giveup errorBtn">
+        <div class="applyerror giveup errorBtn" methodindex="19">
             <img src="images/error_giveup_03.png" alt="" type="forwards">
         </div>
     </div>
+
+
+
+
     <div id="question3End" class="page questionEnd" style="display: none">
         <div class="layer">
             <div class="answerLayer answerLayer1"><img src="images/gameplay_03.png"></div>
@@ -331,7 +353,7 @@
             <span class="answermoney middleshake"> <img src="images/answermoney_14.png" alt=""></span>
             <img src="images/answermiddle_03.png" alt="">
         </div>
-        <div class="applysuccess">
+        <div class="applysuccess" methodindex="30b">
             <img src="images/applysuccess_07.png" type="forwards">
         </div>
     </div>
@@ -345,10 +367,10 @@
         <div class="answermiddle">
             <img class="shake" src="images/dancemiddle_09.png" alt="">
         </div>
-        <div class="applyerror another errorBtn">
+        <div class="applyerror another errorBtn" methodindex="26">
             <img src="images/error_another_03.png" alt="" type="back">
         </div>
-        <div class="applyerror giveup errorBtn">
+        <div class="applyerror giveup errorBtn" methodindex="27">
             <img src="images/error_giveup_03.png" alt="" type="forwards">
         </div>
     </div>
@@ -362,10 +384,10 @@
         <div class="answermiddle">
             <img class="middleshake" src="images/sleepenoughmiddle_13.png" alt="">
         </div>
-        <div class="applyerror another errorBtn">
+        <div class="applyerror another errorBtn" methodindex="28">
             <img src="images/error_another_03.png" alt="" type="back">
         </div>
-        <div class="applyerror giveup errorBtn">
+        <div class="applyerror giveup errorBtn" methodindex="29">
             <img src="images/error_giveup_03.png" alt="" type="forwards">
         </div>
     </div>
@@ -381,7 +403,7 @@
             <span class="answermoney middleshake"> <img src="images/answermoney_14.png" alt=""></span>
             <img src="images/answermiddle_03.png" alt="">
         </div>
-        <div class="applysuccess">
+        <div class="applysuccess" methodindex="35b">
             <img src="images/answer4correct_51.png" direct=".worseEnd">
         </div>
     </div>
@@ -396,7 +418,7 @@
         <div class="answermiddle">
             <img class="shake" src="images/nowifimiddle_03.png" alt="">
         </div>
-        <div class="applyerror finalBtn errorBtn">
+        <div class="applyerror finalBtn errorBtn" methodindex="36">
             <img src="images/finalanswer_07.png" alt="" direct=".betterEnd">
         </div>
     </div>
@@ -411,7 +433,7 @@
         <div class="answermiddle">
             <img class="shake" src="images/oncemoremiddle_03.png" alt="">
         </div>
-        <div class="applyerror finalBtn errorBtn">
+        <div class="applyerror finalBtn errorBtn" methodindex="37">
             <img src="images/finalanswer_07.png" alt="" direct=".betterEnd">
         </div>
     </div>
@@ -452,31 +474,32 @@
     </div>
 </div>
 <script>
-    var windowHeight = $(window).height();
-    $(".Container").css("height", windowHeight);
-    $(".page").css("height", windowHeight);
+  var windowHeight = $(window).height();
+  $(".Container").css("height", windowHeight);
+  $(".page").css("height", windowHeight);
 
-    function size() {
-        var _screenWidth = document.documentElement.clientWidth < 300 ? 300 : document.documentElement.clientWidth,
-                _UIWidth = 640,
-                _fontSize = _screenWidth / _UIWidth * 100;
-        document.documentElement.style.fontSize = _fontSize + 'px';
-    }
+  function size() {
+    var _screenWidth = document.documentElement.clientWidth < 300 ? 300 : document.documentElement.clientWidth,
+      _UIWidth = 640,
+      _fontSize = _screenWidth / _UIWidth * 100;
+    document.documentElement.style.fontSize = _fontSize + 'px';
+  }
+  size();
+  window.onresize = function () {
     size();
-    window.onresize = function () {
-        size();
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+      var audio = document.getElementById('BGM');
+      audio.play();
+      document.addEventListener("WeixinJSBridgeReady", function () {
+        audio.play();
+      }, false);
+      console.log(111)
     }
-    document.addEventListener('DOMContentLoaded', function () {
-      function audioAutoPlay() {
-          var audio = document.getElementById('BGM');
-              audio.play();
-          document.addEventListener("WeixinJSBridgeReady", function () {
-              audio.play();
-          }, false);
-          console.log(111)
-      }
-      audioAutoPlay();
-    })
+
+    audioAutoPlay();
+  })
 </script>
 <script type="text/javascript" src="question.js"></script>
 <script type="text/javascript" src="js/renderquestion.js"></script>
