@@ -967,11 +967,12 @@ body .Container {
     overflow: hidden;
 }
 .chancesuccess .chancetimes .con{
-    width: 2.4rem;
+    /*width: 2.4rem;*/
     margin: 0 auto;
     overflow: hidden;
+    display: table;
 }
-.chancesuccess .chancetimes .con .ten,.chancesuccess .chancetimes .con .int{
+.chancesuccess .chancetimes .con .ten,.chancesuccess .chancetimes .con .int,.chancesuccess .chancetimes .con .hundred{
     width: 0.85rem;
     height: 0.8rem;
 }
@@ -980,8 +981,8 @@ body .Container {
     height: 0.7rem;
     margin-top: 0.06rem;
 }
-.chancesuccess .chancetimes .con .ten,.chancesuccess .chancetimes .con .int,.chancesuccess .chancetimes .con .chances{
-    float: left;
+.chancesuccess .chancetimes .con .hundred,.chancesuccess .chancetimes .con .ten,.chancesuccess .chancetimes .con .int,.chancesuccess .chancetimes .con .chances{
+    display:table-cell;
 }
 .chancesuccess .chancemain{
     width: 5.62rem;

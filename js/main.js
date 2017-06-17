@@ -49,7 +49,7 @@ $(function () {
     pauseflag = !pauseflag;
   })
   //狂点页面逻辑
-  var timeCount = 10;
+  var timeCount = 20;
   var clickChance = 0
   function caltime(){
     window.calTimeCount = setInterval(function () {
@@ -60,9 +60,21 @@ $(function () {
       }else if(timeCount==0){
         clearInterval(window.calTimeCount)
         // alert("时间到,您总共的点击次数是"+clickChance);
-        var clickChanceStr = clickChance.toString();
-        var ten = clickChanceStr.length>=2?clickChanceStr[0]:'0';
-        var int = clickChanceStr.length>=2?clickChanceStr[1]:clickChanceStr[0];
+        var clickChanceStr = clickChance.toString(),hundred,ten,int;
+        if(clickChanceStr.length==3){   //点击数为100次以上
+          hundred = clickChanceStr[0];
+          ten = clickChanceStr[1];
+          int = clickChanceStr[2]
+        }else if(clickChanceStr.length==2){   //点击数为10-99
+          hundred = null;
+          ten = clickChanceStr[0];
+          int = clickChanceStr[1]
+        }
+        else if(clickChanceStr.length==1){    //点击数为10次以下
+          hundred = null;
+          ten = '0';
+          int = clickChanceStr[1]
+        }
         //重置倒计时和次数
         if(clickChance<=40){
           window.goStr = "#toreveive1"
@@ -80,6 +92,12 @@ $(function () {
         $(".gaming").hide();
         $(".ten img").hide();
         $(".int img").hide();
+        $(".hundred img").hide();
+        if(hundred!==null){
+          $(".hundred .num_"+hundred).show();
+        }else{
+          $(".hundred").hide();
+        }
         $(".ten .num_"+ten).show();
         $(".int .num_"+int).show();
         $(".chancesuccess").show();
