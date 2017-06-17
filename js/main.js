@@ -49,7 +49,7 @@ $(function () {
     pauseflag = !pauseflag;
   })
   //狂点页面逻辑
-  var timeCount = 20;
+  var timeCount = 10;
   var clickChance = 0
   function caltime(){
     window.calTimeCount = setInterval(function () {
@@ -88,6 +88,7 @@ $(function () {
           window.goStr = "#toreveive5"
         }
         clickChance = 0;
+        $(".gaming .chance").html(clickChance)
         timeCount = 10;
         $(".gaming").hide();
         $(".ten img").hide();
