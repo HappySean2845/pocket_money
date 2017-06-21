@@ -28,7 +28,7 @@ window.question = [
       msg:'功能夸大型：为拉动国民幸福值，满足刚性需求，我想出去喝个小酒。。。！',
       direct:'.questionError2',
       desc:false,
-      methodIndex:13,
+      methodIndex:15,
     },
     answerB:{
       msg:'坐低伏小型：我有一个渺小的愿望，不知当讲不当讲。今天，我想喝酒。',
@@ -40,7 +40,7 @@ window.question = [
       msg:'借题发挥型：下周有个领导的饭局，我想提前演练下，升职加薪就看这次！',
       direct:'#question2End',
       desc:true,
-      methodIndex:15,
+      methodIndex:13,
     }
   },
   {

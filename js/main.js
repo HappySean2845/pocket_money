@@ -34,6 +34,7 @@ $(function () {
       clearInterval(window.loading);
       $(".loading").hide();
       $(".beginPage").show(500);
+      window.smqObj['2']['method']();
     },2500)
   }()
   var pauseflag = false;    //暂停开关'
@@ -116,6 +117,7 @@ $(function () {
   })
   $(".toreveive .receivebtn").on("click",function () {
     window.smqObj['40b']['method']();
+    window.smqObj['41']['method']();
     var _this = $(this);
     setTimeout(function () {
       _this.parent(".toreveive").hide();
@@ -179,7 +181,7 @@ $(function () {
         }else if(window.methodIndex==4){
           method2 ='35a';
         }
-        window.smqObj['42b']['method']();
+        window.smqObj[method2]['method']();
       }
       $("#questionTemplate").removeClass("problemup");
       $(direct).show();
@@ -233,7 +235,7 @@ $(function () {
   //formbtn表单提交
   $('.forminput .formBtn').on("click",function () {
     var _this = $(this);
-    window.smqObj['42b']['method']();
+    window.smqObj['42a']['method']();
     setTimeout(function () {
       // $(".forminput").hide();
       // $(".receivesuccess").show();
@@ -372,10 +374,13 @@ $(function () {
             var wr = result.success[0].result;
             if (wr == 1) {
                 alert('提交成功');
-               window.hasFormSubmit = true;
+              // window.smqObj['42b']['method']();
+              window.smqObj['42b']['method'](_name, _tel, _province, _city, _dealer);
+              window.hasFormSubmit = true;
               $('.forminput').fadeOut();
                 $('.receivesuccess').fadeIn(300);
-                // var p = $("#pro option:selected").text();
+              window.smqObj['43']['method']();
+              // var p = $("#pro option:selected").text();
                 // var c = $("#city option:selected").text();
                 // var d = $("#delear option:selected").text();
                 // _tel = _tel.replace(_tel.substr(3,4),'****');
