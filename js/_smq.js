@@ -188,13 +188,12 @@ window.smqObj = {
       _smq.push(['custom', '17-baojun', '730GMACH5-Q3-answerC']);
     }
   },
-
-
+  
   25: {
     url: '',
     name: "730GMACH5-Q3-confirmation",
     method: function () {
-      _smq.push(['custom', '17-baojun', '730GMACH5-Q3-answerC']);
+      _smq.push(['custom','17-baojun','730GMACH5-Q3-confirmation']);
     }
   },
   26: {
