@@ -34,7 +34,7 @@ $(function () {
       clearInterval(window.loading);
       $(".loading").hide();
       $(".beginPage").show(500);
-      window.smqObj['2']['method']();
+      // window.smqObj['2']['method']();
     },2500)
   }()
   var pauseflag = false;    //暂停开关'
@@ -380,24 +380,6 @@ $(function () {
               $('.forminput').fadeOut();
                 $('.receivesuccess').fadeIn(300);
               window.smqObj['43']['method']();
-              // var p = $("#pro option:selected").text();
-                // var c = $("#city option:selected").text();
-                // var d = $("#delear option:selected").text();
-                // _tel = _tel.replace(_tel.substr(3,4),'****');
-                // _gsq.push(['T', 'GWD-002942', 'trackEvent', 'click', '730',location.pathname]);
-                // if (window.gsTracker) {
-                //     var orderid = leadsID;
-                //     gsTracker.addOrder(orderid, 1);
-                //     gsTracker.setEcomProperty(orderid, "1", _name);
-                //     gsTracker.setEcomProperty(orderid, "2", _tel);
-                //     gsTracker.setEcomProperty(orderid, "3", "宝骏730");
-                //     gsTracker.setEcomProperty(orderid, "4", p);
-                //     gsTracker.setEcomProperty(orderid, "5", c);
-                //     gsTracker.setEcomProperty(orderid, "6", _dealer);
-                //     gsTracker.addProduct(orderid, location.pathname, location.pathname, 1, 1, "全新宝骏730");
-                //     gsTracker.trackECom();
-                //     gsTracker.track("/targetpage/formsubmit/sqtywlpc");
-                // }
             } else if (wr == 2) {
                 alert('您已预约成功,请勿重复提交');
             } else {

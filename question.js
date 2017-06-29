@@ -72,7 +72,7 @@ window.question = [
       msg:'热血恳求型：周天王的演唱会啊！一生一次，买不了吃亏，买不了上当！',
       direct:'.questionError4Else',
       desc:false,
-      methodIndex:31,
+      methodIndex:33,
     },
     answerB:{
       msg:'瞎凑热闹型：最近几个朋友都买了票，我也想去看看，嘿嘿嘿~',
@@ -84,7 +84,7 @@ window.question = [
       msg:'借花献佛型：记得你爱听他的歌，这次给我个机会带你去听。',
       direct:'#question4End',
       desc:true,
-      methodIndex:33,
+      methodIndex:31,
     }
   },
 ]

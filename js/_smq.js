@@ -362,7 +362,10 @@ window.smqObj = {
     url: '',
     name: "730GMACH5-leads-submitsuccess",
     method: function (_name, _tel, p, c, _dealer) {
-      _smq.push(['custom', '17-baojun', '730millionsownernewMB-home-submitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
+      var _tel_hidden =  _tel.substring(0,3)+'****'+_tel.substring(7,11)
+      // console.log("留资信息",_name,_tel_hidden,p,c,_dealer);
+      // console.log('留资信息222','{' + _name + '+' + _tel_hidden + '+' + p + '+' + c + '+' + _dealer + '}')
+      _smq.push(['custom', '17-baojun', '730millionsownernewMB-home-submitsuccess',  _name + '+' + _tel_hidden + '+' + p + '+' + c + '+' + _dealer]);
     }
   },
   43: {
